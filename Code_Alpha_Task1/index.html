@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Grade Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">📊</span>
+        <span class="logo-text">GradeTracker</span>
+      </div>
+      <p class="tagline">Track. Analyze. Improve.</p>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- ADD STUDENT FORM -->
+    <section class="card" id="add-section">
+      <h2 class="section-title">Add Student</h2>
+      <div class="form-row">
+        <div class="input-group">
+          <label for="studentName">Student Name</label>
+          <input type="text" id="studentName" placeholder="e.g. Alice Johnson" />
+        </div>
+        <div class="input-group">
+          <label for="studentGrade">Grade (0 – 100)</label>
+          <input type="number" id="studentGrade" placeholder="e.g. 85" min="0" max="100" />
+        </div>
+        <button class="btn-primary" onclick="addStudent()">Add Student</button>
+      </div>
+      <p class="error-msg" id="errorMsg"></p>
+    </section>
+
+    <!-- STATS CARDS -->
+    <section class="stats-grid" id="statsSection" style="display:none;">
+      <div class="stat-card">
+        <span class="stat-label">Total Students</span>
+        <span class="stat-value" id="statTotal">0</span>
+      </div>
+      <div class="stat-card average">
+        <span class="stat-label">Average Score</span>
+        <span class="stat-value" id="statAvg">—</span>
+      </div>
+      <div class="stat-card highest">
+        <span class="stat-label">Highest Score</span>
+        <span class="stat-value" id="statHigh">—</span>
+      </div>
+      <div class="stat-card lowest">
+        <span class="stat-label">Lowest Score</span>
+        <span class="stat-value" id="statLow">—</span>
+      </div>
+      <div class="stat-card passed">
+        <span class="stat-label">Passed</span>
+        <span class="stat-value" id="statPassed">0</span>
+      </div>
+      <div class="stat-card failed">
+        <span class="stat-label">Failed</span>
+        <span class="stat-value" id="statFailed">0</span>
+      </div>
+    </section>
+
+    <!-- STUDENT TABLE -->
+    <section class="card" id="tableSection" style="display:none;">
+      <div class="table-header-row">
+        <h2 class="section-title">Student Records</h2>
+        <button class="btn-danger" onclick="clearAll()">Clear All</button>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Grade</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="studentTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- EMPTY STATE -->
+    <div class="empty-state" id="emptyState">
+      <div class="empty-icon">🎓</div>
+      <p>No students added yet.</p>
+      <span>Add a student above to get started.</span>
+    </div>
+
+  </main>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
