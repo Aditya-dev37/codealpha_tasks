@@ -23,6 +23,7 @@ How to Run
 1. Clone or download this repository
 2. Open index.html in any browser
 3. No installation needed!
+
 Tech Stack
 
 1. HTML5
@@ -31,7 +32,7 @@ Tech Stack
 
 3. Vanilla JavaScript
 
-4. Project Structure
+Project Structure
    
 CodeAlpha_StudentGradeTracker/
 
